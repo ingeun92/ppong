@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-// var models = require('./models/models');
+var models = require('./db/models');
 
 app.set('view engine', 'ejs');
 app.engine('html', require('ejs').renderFile);
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 // app.use('/users', userController)
 
 // 데이터 베이스 Initialization
-// models.init();
+models.init();
 
 app.listen(3000, function() {
   console.log("Express server has started on port 3000");
