@@ -19,4 +19,4 @@ ssh -i ./ing_server.pem $HOST 'sudo $(sudo aws ecr get-login --no-include-email 
 ssh -i ./ing_server.pem $HOST 'sudo docker pull 999446963004.dkr.ecr.ap-northeast-2.amazonaws.com/ing_server:latest'
 ssh -i ./ing_server.pem $HOST 'sudo docker stop ing_server'
 ssh -i ./ing_server.pem $HOST 'sudo docker rm ing_server'
-ssh -i ./ing_server.pem $HOST 'sudo docker run -d --restart=always -p 80:3000 --name=ing_server 999446963004.dkr.ecr.ap-northeast-2.amazonaws.com/ing_server:latest'
+ssh -i ./ing_server.pem $HOST 'sudo docker run -d --net=host --restart=always --name=ing_server 999446963004.dkr.ecr.ap-northeast-2.amazonaws.com/ing_server:latest'

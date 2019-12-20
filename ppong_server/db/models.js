@@ -23,9 +23,10 @@ var Ing = sequelize.define('ing', {
     },
     score: Sequelize.INTEGER,                       // round score
     flag_win: Sequelize.BOOLEAN,                    // win flag
-    flag_lose: Sequelize.BOOLEAN,                   // lose flag
-    flag_end: Sequelize.BOOLEAN,                    // end flag
-});
+    flag_lose: Sequelize.BOOLEAN                    // lose flag
+  },
+  { freezeTableName: true }
+);
 
 // Jaeki Model
 var Jaeki = sequelize.define('jaeki', {
@@ -36,9 +37,10 @@ var Jaeki = sequelize.define('jaeki', {
     },
     score: Sequelize.INTEGER,                       // round score
     flag_win: Sequelize.BOOLEAN,                    // win flag
-    flag_lose: Sequelize.BOOLEAN,                   // lose flag
-    flag_end: Sequelize.BOOLEAN,                    // end flag
-});
+    flag_lose: Sequelize.BOOLEAN                    // lose flag
+  },
+  { freezeTableName: true }
+);
 
 // Woni Model
 var Woni = sequelize.define('woni', {
@@ -49,9 +51,10 @@ var Woni = sequelize.define('woni', {
     },
     score: Sequelize.INTEGER,                       // round score
     flag_win: Sequelize.BOOLEAN,                    // win flag
-    flag_lose: Sequelize.BOOLEAN,                   // lose flag
-    flag_end: Sequelize.BOOLEAN,                    // end flag
-});
+    flag_lose: Sequelize.BOOLEAN                    // lose flag
+  },
+  { freezeTableName: true }
+);
 
 // Huni Model
 var Huni = sequelize.define('huni', {
@@ -62,9 +65,10 @@ var Huni = sequelize.define('huni', {
     },
     score: Sequelize.INTEGER,                       // round score
     flag_win: Sequelize.BOOLEAN,                    // win flag
-    flag_lose: Sequelize.BOOLEAN,                   // lose flag
-    flag_end: Sequelize.BOOLEAN,                    // end flag
-});
+    flag_lose: Sequelize.BOOLEAN                    // lose flag
+  },
+  { freezeTableName: true }
+);
 
 // Woong Model
 var Woong = sequelize.define('woong', {
@@ -75,9 +79,10 @@ var Woong = sequelize.define('woong', {
     },
     score: Sequelize.INTEGER,                       // round score
     flag_win: Sequelize.BOOLEAN,                    // win flag
-    flag_lose: Sequelize.BOOLEAN,                   // lose flag
-    flag_end: Sequelize.BOOLEAN,                    // end flag
-});
+    flag_lose: Sequelize.BOOLEAN                    // lose flag
+  },
+  { freezeTableName: true }
+);
 
 db['sequelize'] = sequelize;
 db['Ing'] = Ing;
