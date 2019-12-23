@@ -7,6 +7,7 @@ import {
 
 import Home from '../pages/Home';
 import Playing from '../pages/Playing';
+import Money from '../pages/Money';
 
 export default class App extends React.Component {
   render() {
@@ -17,6 +18,10 @@ export default class App extends React.Component {
             {/* Playing */}
             <Route path="/playing">
               <Playing />
+            </Route>
+            {/* Money */}
+            <Route path="/money">
+              <Money />
             </Route>
             {/* Home */}
             <Route path="/">

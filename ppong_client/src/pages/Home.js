@@ -4,14 +4,14 @@ import DefaultLayout from './Default'
 class Firstpage extends Component {
 
   render() {
-    const Row = ({ children }) => {
-      return (
-        <div className="row">
-          {children}
-        </div>
-      );
-    }
-    
+    // const Row = ({ children }) => {
+    //   return (
+    //     <div className="row">
+    //       {children}
+    //     </div>
+    //   );
+    // }
+
     return (
       <DefaultLayout>
       </DefaultLayout>

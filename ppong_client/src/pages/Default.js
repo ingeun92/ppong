@@ -26,6 +26,11 @@ export default class DefaultLayout extends React.Component {
                                 <span>Playing</span>
                             </a>
                         </li>
+                        <li className="nav-item">
+                            <a className="nav-link collapsed" href="/money">
+                                <span>Money</span>
+                            </a>
+                        </li>
                         <hr className="sidebar-divider" />
                         <div className="sidebar-heading">
                             기록 보관소

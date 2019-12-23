@@ -1,0 +1,15 @@
+FROM node:12.14.0
+
+# 앱 디렉터리 생성
+WORKDIR /usr/src/app_cli
+
+# 앱 의존성 설치
+COPY package*.json ./
+RUN npm install
+
+ENV PORT=80
+
+# 앱 소스 추가
+COPY . .
+
+CMD [ "npm", "start" ]
