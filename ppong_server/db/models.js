@@ -92,7 +92,7 @@ db['Huni'] = Huni;
 db['Woong'] = Woong;
 
 db.init = function() {
-    const ifForced = { force: true };
+    const ifForced = { force: false };
 
     if(ifForced.force === true) {
         // Ing Model 생성
