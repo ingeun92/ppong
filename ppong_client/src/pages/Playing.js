@@ -104,7 +104,7 @@ class Playpage extends Component {
       })
     });
 
-    console.log(res);
+    return res;
   }
 
   finish() {
@@ -122,14 +122,15 @@ class Playpage extends Component {
         woong: this.state.woong
       })
     });
-
-    console.log(res);
   }
 
   finish_ing = () => {
+    var scope = this;
+
     this.mappingState();
-    this.player_num();
-    this.finish();
+    this.player_num().then((res) => {
+      scope.finish();
+    });
   }
 
   render() {

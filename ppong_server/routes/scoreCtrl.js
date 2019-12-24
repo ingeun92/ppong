@@ -14,10 +14,11 @@ var player_num = 0;
 
 // input player number
 router.post('/player', function (req, res) {
-  console.log(req.body.num);
   if (req.body.num != "") {
     player_num = Number(req.body.num);
   }
+
+  res.send('Ok');
 });
 
 // calculate score & money
@@ -85,14 +86,12 @@ router.post('/finish', async function (req, res) {
   var gap_woni = (score_avg * flag_woni) - score_woni;
   var gap_huni = (score_avg * flag_huni) - score_huni;
   var gap_woong = (score_avg * flag_woong) - score_woong;
-  console.log(flag_woong);
 
   money_ing += Math.round((gap_ing * 200) / 1000) * 1000;
   money_jaeki += Math.round((gap_jaeki * 200) / 1000) * 1000;
   money_woni += Math.round((gap_woni * 200) / 1000) * 1000;
   money_huni += Math.round((gap_huni * 200) / 1000) * 1000;
   money_woong += Math.round((gap_woong * 200) / 1000) * 1000;
-  console.log(money_ing);
 
   money["ing"] = money_ing.toString();
   money["jaeki"] = money_jaeki.toString();
