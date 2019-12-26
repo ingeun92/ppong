@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 1. build process
-HOST="ubuntu@15.164.231.39"
+HOST="ubuntu@13.209.195.119"
 REGISTRY="999446963004.dkr.ecr.ap-northeast-2.amazonaws.com/ing_server"
 
 export AWS_ACCESS_KEY_ID=AKIA6RM5OMM6PY5SETF3

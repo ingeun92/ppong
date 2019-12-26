@@ -2,7 +2,7 @@
 npm run-script build
 
 # 1. build process
-HOST="ubuntu@13.125.208.82"
+HOST="ubuntu@15.164.80.238"
 REGISTRY="999446963004.dkr.ecr.ap-northeast-2.amazonaws.com/ing_client"
 
 export AWS_ACCESS_KEY_ID=AKIA6RM5OMM6PY5SETF3

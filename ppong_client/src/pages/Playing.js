@@ -93,7 +93,7 @@ class Playpage extends Component {
   }
 
   player_num() {
-    var res = fetch('http://15.164.231.39:88/score/player', {
+    var res = fetch('http://13.209.195.119:88/score/player', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
@@ -108,7 +108,7 @@ class Playpage extends Component {
   }
 
   finish() {
-    var res = fetch('http://15.164.231.39:88/score/finish', {
+    var res = fetch('http://13.209.195.119:88/score/finish', {
       method: 'post',
       headers: {
         'Accept': 'application/json',
