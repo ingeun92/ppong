@@ -78,7 +78,7 @@ router.post('/finish', async function (req, res) {
   console.log(player_num);
   var score_sum = score_ing + score_jaeki + score_woni + score_huni + score_woong;
   console.log(score_sum);
-  var score_avg = Math.round(score_sum / player_num);
+  var score_avg = score_sum / player_num;
   console.log(score_avg);
 
   var gap_ing = (score_avg * flag_ing) - score_ing;
@@ -153,6 +153,6 @@ router.get('/end', function (req, res) {
 
 router.get('/money', function (req, res) {
   res.send(money);
-})
+});
 
 module.exports = router;

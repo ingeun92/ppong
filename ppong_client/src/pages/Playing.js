@@ -29,6 +29,18 @@ class Playpage extends Component {
     num: ''
   }
 
+  state = {
+    sum_ing: '',
+    sum_jaeki: '',
+    sum_woni: '',
+    sum_huni: '',
+    sum_woong: ''
+  }
+
+  state = {
+    avg: ''
+  }
+
   mappingState() {
     this.state.ing = [
       this.state.ing0,
@@ -133,6 +145,123 @@ class Playpage extends Component {
     });
   }
 
+  cal_score = () => {
+    var string_ing = [];
+    var string_jaeki = [];
+    var string_woni = [];
+    var string_huni = [];
+    var string_woong = [];
+
+    var num_ing = [];
+    var num_jaeki = [];
+    var num_woni = [];
+    var num_huni = [];
+    var num_woong = [];
+
+    var sum_ing = 0;
+    var sum_jaeki = 0;
+    var sum_woni = 0;
+    var sum_huni = 0;
+    var sum_woong = 0;
+
+    string_ing = [
+      this.state.ing0,
+      this.state.ing1,
+      this.state.ing2,
+      this.state.ing3,
+      this.state.ing4,
+      this.state.ing5,
+      this.state.ing6,
+      this.state.ing7,
+      this.state.ing8,
+      this.state.ing9
+    ];
+    string_jaeki = [
+      this.state.jaeki0,
+      this.state.jaeki1,
+      this.state.jaeki2,
+      this.state.jaeki3,
+      this.state.jaeki4,
+      this.state.jaeki5,
+      this.state.jaeki6,
+      this.state.jaeki7,
+      this.state.jaeki8,
+      this.state.jaeki9
+    ];
+    string_woni = [
+      this.state.woni0,
+      this.state.woni1,
+      this.state.woni2,
+      this.state.woni3,
+      this.state.woni4,
+      this.state.woni5,
+      this.state.woni6,
+      this.state.woni7,
+      this.state.woni8,
+      this.state.woni9
+    ];
+    string_huni = [
+      this.state.huni0,
+      this.state.huni1,
+      this.state.huni2,
+      this.state.huni3,
+      this.state.huni4,
+      this.state.huni5,
+      this.state.huni6,
+      this.state.huni7,
+      this.state.huni8,
+      this.state.huni9
+    ];
+    string_woong = [
+      this.state.woong0,
+      this.state.woong1,
+      this.state.woong2,
+      this.state.woong3,
+      this.state.woong4,
+      this.state.woong5,
+      this.state.woong6,
+      this.state.woong7,
+      this.state.woong8,
+      this.state.woong9
+    ];
+
+    num_ing = string_ing.map(Number);
+    num_jaeki = string_jaeki.map(Number);
+    num_woni = string_woni.map(Number);
+    num_huni = string_huni.map(Number);
+    num_woong = string_woong.map(Number);
+
+    for (var i = 0; i < 10; i++) {
+      if (!isNaN(num_ing[i])) {
+        sum_ing += num_ing[i];
+      }
+      if (!isNaN(num_jaeki[i])) {
+        sum_jaeki += num_jaeki[i];
+      }
+      if (!isNaN(num_woni[i])) {
+        sum_woni += num_woni[i];
+      }
+      if (!isNaN(num_huni[i])) {
+        sum_huni += num_huni[i];
+      }
+      if (!isNaN(num_woong[i])) {
+        sum_woong += num_woong[i];
+      }
+    }
+
+    this.state.sum_ing = sum_ing;
+    this.state.sum_jaeki = sum_jaeki;
+    this.state.sum_woni = sum_woni;
+    this.state.sum_huni = sum_huni;
+    this.state.sum_woong = sum_woong;
+
+    var num = Number(this.state.num);
+    var sum_all = sum_ing + sum_jaeki + sum_woni + sum_huni + sum_woong;
+    var avg_all = Math.round(sum_all / num);
+
+    this.state.avg = avg_all;
+  }
+
   render() {
     const Row = ({ children }) => {
       return (
@@ -143,6 +272,7 @@ class Playpage extends Component {
     }
 
     const InputScore = () => {
+      this.cal_score();
       return (
         <div>
           <Form>
@@ -160,9 +290,13 @@ class Playpage extends Component {
                 </FormGroup>
               </Col>
             </Row>
+            <div>
+              <h5>평균: {this.state.avg}</h5>
+            </div>
             <Row form>
               <Col>
                 <h5>인근</h5>
+                <h5>{this.state.sum_ing}</h5>
                 <FormGroup>
                   <DelayInput
                     style = {{width: "100px"}}
@@ -238,6 +372,7 @@ class Playpage extends Component {
               </Col>
               <Col>
                 <h5>재이</h5>
+                <h5>{this.state.sum_jaeki}</h5>
                 <FormGroup>
                   <DelayInput
                     style = {{width: "100px"}}
@@ -313,6 +448,7 @@ class Playpage extends Component {
               </Col>
               <Col>
                 <h5>강원</h5>
+                <h5>{this.state.sum_woni}</h5>
                 <FormGroup>
                   <DelayInput
                     style = {{width: "100px"}}
@@ -388,6 +524,7 @@ class Playpage extends Component {
               </Col>
               <Col>
                 <h5>지훈</h5>
+                <h5>{this.state.sum_huni}</h5>
                 <FormGroup>
                   <DelayInput
                     style = {{width: "100px"}}
@@ -463,6 +600,7 @@ class Playpage extends Component {
               </Col>
               <Col>
                 <h5>찬웅</h5>
+                <h5>{this.state.sum_woong}</h5>
                 <FormGroup>
                   <DelayInput
                     style = {{width: "100px"}}
