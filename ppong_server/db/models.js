@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var db = {}
 
 // 데이터 접속 및 모델 추가
-var sequelize = new Sequelize('ppong_db', 'root', 'dlsrms', {
+var sequelize = new Sequelize('ppong_db', 'ppong', 'dlsrms', {
     host: 'localhost',
     dialect: 'mysql',
     define: { // 데이터 타입을 UTF-8로 변경
@@ -92,7 +92,7 @@ db['Huni'] = Huni;
 db['Woong'] = Woong;
 
 db.init = function() {
-    const ifForced = { force: true };
+    const ifForced = { force: false };
 
     if(ifForced.force === true) {
         // Ing Model 생성
