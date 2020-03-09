@@ -12,7 +12,7 @@ class Moneypage extends Component {
   }
 
   async componentDidMount() {
-    var res = await fetch('http://13.209.195.119:88/score/money');
+    var res = await fetch('http://ppong_server/score/money');
     var data = await res.json();
     this.setState({
       money_ing: data.ing,
@@ -24,7 +24,7 @@ class Moneypage extends Component {
   }
 
   endGame() {
-    var res = fetch('http://13.209.195.119:88/score/end', {
+    var res = fetch('http://ppong_server/score/end', {
       method: 'get'
     });
   }
