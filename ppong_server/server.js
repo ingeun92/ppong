@@ -27,6 +27,6 @@ app.use('/score', scoreController);
 // 데이터 베이스 Initialization
 models.init();
 
-app.listen(88, function() {
-  console.log("Express server has started on port 88");
+app.listen(3200, function() {
+  console.log("Express server has started on port 3200");
 });
